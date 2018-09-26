@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>iOS and Js</title>
+        <style type="text/css">
+            * {
+                font-size: 40px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        
+        <div style="margin-top: 10px">
+            <div><input type="button" value="call js alert" onclick="callJsAlert()"></div><br/>
+            <div><input type="button" value="Call js confirm" onclick="callJsConfirm()"></div><br/>
+            <div><input type="button" value="Call Js prompt " onclick="callJsInput()"></div><br/>
+            <div><input type="button" value="Call OC Method " onclick="callOC()"></div><br/>
+            <div><input type="button" value="Call OC注入的JS " onclick="callInjeJs()"></div><br/>
+        </div>
+        <br/>
+        <br/>
+        <div id="SwiftDiv">
+            <span id="jsParamFuncSpan" style="color: red; font-size: 50px;"></span>
+        </div>
+        
+        <script type="text/javascript">
+            function callJsAlert() {
+                alert('Call JS Alert');
+            }
+        
+        function callJsConfirm() {
+            if (confirm('confirm', 'Objective-C call js to show confirm')) {
+                document.getElementById('jsParamFuncSpan').innerHTML
+                = 'true';
+            } else {
+                document.getElementById('jsParamFuncSpan').innerHTML
+                = 'false';
+            }
+        }
+        
+        function callJsInput() {
+            var response = prompt('Hello', 'Please input your name:');
+            document.getElementById('jsParamFuncSpan').innerHTML = response;
+        }
+        function callOC()
+        {
+            clickLink();
+        }
+        function callJS(str1)
+        {
+            alert(str1);
+        }
+        function sendCommand(cmd,param){
+           
+        }
+        function clickLink(){
+            var url="testapp:"+"alert"+":"+"你好吗？";
+            document.location = url;
+        }
+        function callInjeJs(){
+            myFunction();
+        }
+        </script>
+    </body>
+</html>
